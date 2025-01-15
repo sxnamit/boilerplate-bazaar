@@ -9,8 +9,8 @@ public class SimpleProductFactory {
     private static final Map<String, Supplier<Product>> PRODUCT_MAP = new HashMap<>();
 
     static {
-        PRODUCT_MAP.put("A", () -> new ConcreteProductA());
-        PRODUCT_MAP.put("B", () -> new ConcreteProductB());
+        PRODUCT_MAP.put("A", ConcreteProductA::new);
+        PRODUCT_MAP.put("B", ConcreteProductB::new);
     }
 
     public Product create(String type) {
